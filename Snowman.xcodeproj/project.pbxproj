@@ -20,6 +20,10 @@
 		523A20162A3164400066505F /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20152A3164400066505F /* Letter.swift */; };
 		523A20182A3170E50066505F /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 523A20172A3170E50066505F /* words.txt */; };
 		523A201A2A3175BC0066505F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20192A3175BC0066505F /* AppState.swift */; };
+		523A201C2A31804E0066505F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201B2A31804E0066505F /* SettingsView.swift */; };
+		523A201E2A31CEDE0066505F /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201D2A31CEDE0066505F /* StatsView.swift */; };
+		523A20202A31CFB40066505F /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201F2A31CFB40066505F /* GameStats.swift */; };
+		523A20222A31CFBA0066505F /* WordStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20212A31CFBA0066505F /* WordStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		523A20152A3164400066505F /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
 		523A20172A3170E50066505F /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		523A20192A3175BC0066505F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		523A201B2A31804E0066505F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		523A201D2A31CEDE0066505F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		523A201F2A31CFB40066505F /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
+		523A20212A31CFBA0066505F /* WordStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 				523751E62A30D13200F53FAB /* ContentView.swift */,
 				523751F52A30D20600F53FAB /* GameView.swift */,
 				523A200E2A315BD60066505F /* GuessesView.swift */,
+				523A201B2A31804E0066505F /* SettingsView.swift */,
+				523A20232A31CFC90066505F /* Statistics */,
 				523A200C2A315B450066505F /* LettersView.swift */,
 				523751F32A30D1F700F53FAB /* SidebarView.swift */,
 			);
@@ -110,6 +120,16 @@
 				523A20172A3170E50066505F /* words.txt */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		523A20232A31CFC90066505F /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				523A201D2A31CEDE0066505F /* StatsView.swift */,
+				523A201F2A31CFB40066505F /* GameStats.swift */,
+				523A20212A31CFBA0066505F /* WordStats.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,13 +206,17 @@
 				523A200F2A315BD60066505F /* GuessesView.swift in Sources */,
 				523A201A2A3175BC0066505F /* AppState.swift in Sources */,
 				523A20132A315F700066505F /* GameStatus.swift in Sources */,
+				523A20202A31CFB40066505F /* GameStats.swift in Sources */,
 				523751F62A30D20600F53FAB /* GameView.swift in Sources */,
 				523A20162A3164400066505F /* Letter.swift in Sources */,
 				523A20112A315F080066505F /* Game.swift in Sources */,
+				523A20222A31CFBA0066505F /* WordStats.swift in Sources */,
 				523A200D2A315B450066505F /* LettersView.swift in Sources */,
 				523751E72A30D13200F53FAB /* ContentView.swift in Sources */,
+				523A201E2A31CEDE0066505F /* StatsView.swift in Sources */,
 				523751E52A30D13200F53FAB /* SnowmanApp.swift in Sources */,
 				523751F42A30D1F700F53FAB /* SidebarView.swift in Sources */,
+				523A201C2A31804E0066505F /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

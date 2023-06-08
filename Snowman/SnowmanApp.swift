@@ -16,5 +16,14 @@ struct SnowmanApp: App {
             ContentView()
                 .environmentObject(appState)
         }
+
+        Settings {
+            SettingsView()
+        }
+
+        Window("Statistics", id: "stats") {
+            StatsView(games: appState.games)
+        }
+        .keyboardShortcut("t", modifiers: .command)
     }
 }
