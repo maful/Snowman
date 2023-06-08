@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SidebarView: View {
-    @EnvironmentObject var appState: AppState
+    @ObservedObject var appState: AppState
 
     var body: some View {
         List(appState.games, selection: $appState.selectedID) { game in
@@ -27,7 +27,6 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarView()
-            .environmentObject(AppState())
+        SidebarView(appState: AppState())
     }
 }

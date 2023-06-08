@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct GameView: View {
-    @EnvironmentObject var appState: AppState
+    @ObservedObject var appState: AppState
+    @Environment(\.openWindow) var openWindow
+
     var game: Game {
         appState.games[appState.gameIndex]
     }
@@ -32,10 +34,15 @@ struct GameView: View {
 
                 Spacer()
 
-                Button("New Game") {
-                    appState.startNewGame()
+                HStack(spacing: 60) {
+                    Button("Look Up Word") {
+                        openWindow(value: game.word)
+                    }
+                    Button("New Game") {
+                        appState.startNewGame()
+                    }
+                    .keyboardShortcut(.defaultAction)
                 }
-                .keyboardShortcut(.defaultAction)
                 .opacity(game.gameStatus == .inProgress ? 0 : 1)
                 .disabled(game.gameStatus == .inProgress)
 
@@ -51,7 +58,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
-            .environmentObject(AppState())
+        GameView(appState: AppState())
     }
 }

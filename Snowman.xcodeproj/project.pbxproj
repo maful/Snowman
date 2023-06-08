@@ -25,6 +25,8 @@
 		523A20202A31CFB40066505F /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201F2A31CFB40066505F /* GameStats.swift */; };
 		523A20222A31CFBA0066505F /* WordStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20212A31CFBA0066505F /* WordStats.swift */; };
 		523A20252A31D4180066505F /* ChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20242A31D4180066505F /* ChartPoint.swift */; };
+		523A20272A31FE080066505F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20262A31FE080066505F /* WebView.swift */; };
+		523A20292A3211170066505F /* LookUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20282A3211170066505F /* LookUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		523A201F2A31CFB40066505F /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
 		523A20212A31CFBA0066505F /* WordStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStats.swift; sourceTree = "<group>"; };
 		523A20242A31D4180066505F /* ChartPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPoint.swift; sourceTree = "<group>"; };
+		523A20262A31FE080066505F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		523A20282A3211170066505F /* LookUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				523751F52A30D20600F53FAB /* GameView.swift */,
 				523A200E2A315BD60066505F /* GuessesView.swift */,
 				523A201B2A31804E0066505F /* SettingsView.swift */,
+				523A20262A31FE080066505F /* WebView.swift */,
+				523A20282A3211170066505F /* LookUpView.swift */,
 				523A20232A31CFC90066505F /* Statistics */,
 				523A200C2A315B450066505F /* LettersView.swift */,
 				523751F32A30D1F700F53FAB /* SidebarView.swift */,
@@ -207,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				523A200F2A315BD60066505F /* GuessesView.swift in Sources */,
+				523A20292A3211170066505F /* LookUpView.swift in Sources */,
+				523A20272A31FE080066505F /* WebView.swift in Sources */,
 				523A201A2A3175BC0066505F /* AppState.swift in Sources */,
 				523A20132A315F700066505F /* GameStatus.swift in Sources */,
 				523A20202A31CFB40066505F /* GameStats.swift in Sources */,

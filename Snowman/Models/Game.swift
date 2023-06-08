@@ -83,6 +83,10 @@ struct Game: Identifiable {
         }
     }
 
+    mutating func chooseNewWord() {
+        word = getRandomWord()
+    }
+
     func getRandomWord() -> String {
         guard
             let url = Bundle.main.url(forResource: "words", withExtension: "txt"),
