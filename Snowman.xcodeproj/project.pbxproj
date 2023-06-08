@@ -24,6 +24,7 @@
 		523A201E2A31CEDE0066505F /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201D2A31CEDE0066505F /* StatsView.swift */; };
 		523A20202A31CFB40066505F /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A201F2A31CFB40066505F /* GameStats.swift */; };
 		523A20222A31CFBA0066505F /* WordStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20212A31CFBA0066505F /* WordStats.swift */; };
+		523A20252A31D4180066505F /* ChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A20242A31D4180066505F /* ChartPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		523A201D2A31CEDE0066505F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		523A201F2A31CFB40066505F /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
 		523A20212A31CFBA0066505F /* WordStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStats.swift; sourceTree = "<group>"; };
+		523A20242A31D4180066505F /* ChartPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				523A20102A315F080066505F /* Game.swift */,
 				523A20122A315F700066505F /* GameStatus.swift */,
 				523A20152A3164400066505F /* Letter.swift */,
+				523A20242A31D4180066505F /* ChartPoint.swift */,
 				523A20172A3170E50066505F /* words.txt */,
 			);
 			path = Models;
@@ -214,6 +217,7 @@
 				523A200D2A315B450066505F /* LettersView.swift in Sources */,
 				523751E72A30D13200F53FAB /* ContentView.swift in Sources */,
 				523A201E2A31CEDE0066505F /* StatsView.swift in Sources */,
+				523A20252A31D4180066505F /* ChartPoint.swift in Sources */,
 				523751E52A30D13200F53FAB /* SnowmanApp.swift in Sources */,
 				523751F42A30D1F700F53FAB /* SidebarView.swift in Sources */,
 				523A201C2A31804E0066505F /* SettingsView.swift in Sources */,
