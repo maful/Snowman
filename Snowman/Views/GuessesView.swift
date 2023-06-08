@@ -10,7 +10,6 @@ import SwiftUI
 struct GuessesView: View {
     @State var nextGuess = ""
     @Binding var game: Game
-    @FocusState var entryFieldHasFocus: Bool
 
     var body: some View {
         VStack {
@@ -18,24 +17,31 @@ struct GuessesView: View {
                 Text("Letters used:")
                 Text(game.guesses.joined(separator: ", "))
             }
-
-            LabeledContent("Guess a letter:") {
-                TextField("", text: $nextGuess)
-                    .frame(width: 50)
-                    .textFieldStyle(.roundedBorder)
-                    .disabled(game.gameStatus != .inProgress)
-                    .onChange(of: nextGuess) { newValue in
-                        game.processGuess(letter: newValue)
-                        nextGuess = ""
-                    }
-                    .focused($entryFieldHasFocus)
-                    .onChange(of: game.id) { _ in
-                        entryFieldHasFocus = true
-                    }
-                    .onAppear {
-                        entryFieldHasFocus = true
-                    }
+        }
+        .onAppear(perform: startMonitoringKeystrokes)
+        .onChange(of: nextGuess) { _ in
+            if game.gameStatus == .inProgress {
+                game.processGuess(letter: nextGuess)
             }
+            nextGuess = ""
+        }
+    }
+
+    func startMonitoringKeystrokes() {
+        NSEvent.addLocalMonitorForEvents(matching: .keyUp) { event in
+            if event.modifierFlags.contains(.command) {
+                return event
+            }
+
+            guard let key = event.characters(byApplyingModifiers: .shift) else {
+                return event
+            }
+
+            if key >= "A" && key <= "Z" {
+                nextGuess = key
+            }
+
+            return event
         }
     }
 }
