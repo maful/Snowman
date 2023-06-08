@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct GuessesView: View {
-    let guesses = ["E", "S", "R", "X"]
+    @State var nextGuess = ""
+    @Binding var game: Game
+    @FocusState var entryFieldHasFocus: Bool
 
     var body: some View {
         VStack {
             HStack {
                 Text("Letters used:")
-                Text(guesses.joined(separator: ", "))
+                Text(game.guesses.joined(separator: ", "))
             }
 
             LabeledContent("Guess a letter:") {
-                Text("Q")
+                TextField("", text: $nextGuess)
+                    .frame(width: 50)
+                    .textFieldStyle(.roundedBorder)
+                    .disabled(game.gameStatus != .inProgress)
+                    .onChange(of: nextGuess) { newValue in
+                        game.processGuess(letter: newValue)
+                        nextGuess = ""
+                    }
+                    .focused($entryFieldHasFocus)
+                    .onChange(of: game.id) { _ in
+                        entryFieldHasFocus = true
+                    }
+                    .onAppear {
+                        entryFieldHasFocus = true
+                    }
             }
         }
     }
@@ -26,6 +42,6 @@ struct GuessesView: View {
 
 struct GuessesView_Previews: PreviewProvider {
     static var previews: some View {
-        GuessesView()
+        GuessesView(game: .constant(Game(id: 1)))
     }
 }

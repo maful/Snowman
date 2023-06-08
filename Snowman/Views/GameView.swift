@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct GameView: View {
+    @EnvironmentObject var appState: AppState
+    var game: Game {
+        appState.games[appState.gameIndex]
+    }
+
     var body: some View {
         HStack {
-            Image("0")
+            Image("\(game.incorrectGuessCount)")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 230)
@@ -19,19 +24,24 @@ struct GameView: View {
 
             VStack(spacing: 30.0) {
                 Spacer()
-                Text("Enter a letter to guess the word.")
+                Text(game.statusText)
                     .font(.title2)
+                    .foregroundColor(game.gameStatus.statusTextColor)
 
-                LettersView()
+                LettersView(letters: game.letters)
 
                 Spacer()
+
                 Button("New Game") {
-                    print("Starting new game.")
+                    appState.startNewGame()
                 }
                 .keyboardShortcut(.defaultAction)
+                .opacity(game.gameStatus == .inProgress ? 0 : 1)
+                .disabled(game.gameStatus == .inProgress)
+
                 Spacer()
 
-                GuessesView()
+                GuessesView(game: $appState.games[appState.gameIndex])
             }
             .padding()
             Spacer()
@@ -42,5 +52,6 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
+            .environmentObject(AppState())
     }
 }
